@@ -81,9 +81,9 @@ function App() {
           </div>
         </div>
 
-        <div className="profile">
-          <span>👨‍💻</span>
-        </div>
+      <div className="profile">
+  <img src="/profile.PNG" alt="Yogesh Verma" />
+</div>
 
       </section>
 
