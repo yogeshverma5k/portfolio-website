@@ -1,135 +1,277 @@
-import React, { useState } from 'react';
-
 function App() {
-  const [likes, setLikes] = useState(0);
-
-  const myProjects = [
-    { id: 1, title: "Mobile E-Commerce App", desc: "A sleek shopping platform coded completely on a mobile layout using pure React state." },
-    { id: 2, title: "Crypto Live Tracker", desc: "Real-time cryptocurrency visualization UI leveraging React Hooks and modern flexbox grids." }
+  const projects = [
+    {
+      title: "Todo App",
+      description:
+        "A simple and interactive task management application built with React.",
+      tech: "React",
+      link: "#",
+    },
+    {
+      title: "Weather App",
+      description:
+        "A weather application that displays weather information with a clean interface.",
+      tech: "React + API",
+      link: "#",
+    },
+    {
+      title: "Login & Signup",
+      description:
+        "A modern login and registration interface with a clean user experience.",
+      tech: "React",
+      link: "#",
+    },
+    {
+      title: "Profile Section",
+      description:
+        "A responsive profile section designed using React with a modern layout.",
+      tech: "React + CSS",
+      link: "#",
+    },
   ];
 
-  // Pure Inline CSS - Koi CSS file import karne ki zarurat nahi hai
-  const containerStyle = {
-    maxWidth: '900px',
-    margin: '0 auto',
-    padding: '2rem 1.5rem',
-    fontFamily: 'sans-serif',
-    backgroundColor: '#0f172a',
-    color: '#f8fafc',
-    minHeight: '100vh'
-  };
-
-  const navbarStyle = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingBottom: '1.5rem',
-    borderBottom: '1px solid #334155'
-  };
-
-  const logoStyle = {
-    fontSize: '1.5rem',
-    fontWeight: '800',
-    color: '#38bdf8'
-  };
-
-  const heroStyle = {
-    textAlign: 'center',
-    padding: '4rem 1rem'
-  };
-
-  const titleStyle = {
-    fontSize: '2.5rem',
-    fontWeight: '800',
-    marginBottom: '1rem'
-  };
-
-  const highlightStyle = {
-    color: '#38bdf8'
-  };
-
-  const subtitleStyle = {
-    fontSize: '1.15rem',
-    color: '#94a3b8',
-    maxWidth: '600px',
-    margin: '0 auto 2rem auto',
-    lineHeight: '1.6'
-  };
-
-  const btnStyle = {
-    backgroundColor: '#38bdf8',
-    color: '#0f172a',
-    fontWeight: '700',
-    padding: '0.75rem 2rem',
-    border: 'none',
-    borderRadius: '9999px',
-    cursor: 'pointer'
-  };
-
-  const sectionTitleStyle = {
-    fontSize: '1.5rem',
-    fontWeight: '700',
-    marginBottom: '1.5rem',
-    borderLeft: '4px solid #38bdf8',
-    paddingLeft: '0.75rem'
-  };
-
-  const gridStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1.5rem'
-  };
-
-  const cardStyle = {
-    backgroundColor: '#1e293b',
-    border: '1px solid #334155',
-    borderRadius: '12px',
-    padding: '1.5rem'
-  };
-
-  const cardTitleStyle = {
-    fontSize: '1.25rem',
-    fontWeight: '600',
-    color: '#f1f5f9',
-    marginBottom: '0.5rem'
-  };
-
-  const cardDescStyle = {
-    color: '#94a3b8',
-    fontSize: '0.95rem'
-  };
+  const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Git & GitHub",
+  ];
 
   return (
-    <div style={containerStyle}>
-      <header style={navbarStyle}>
-        <div style={logoStyle}>Dev.Phone</div>
-      </header>
+    <div className="portfolio">
 
-      <main>
-        <section style={heroStyle}>
-          <h1 style={titleStyle}>
-            Hi, I'm a <span style={highlightStyle}>React Developer</span>
-          </h1>
-          <p style={subtitleStyle}>
-            I craft clean, fast, and modern web applications directly from my smartphone browser. No VS Code required.
+      {/* NAVBAR */}
+      <nav className="navbar">
+        <h2 className="logo">Yogesh.</h2>
+
+        <div className="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#certificates">Certificates</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <section id="home" className="hero">
+
+        <div className="hero-text">
+          <p className="hello">Hello, I'm</p>
+
+          <h1>Yogesh Verma</h1>
+
+          <h2>Frontend Developer</h2>
+
+          <p>
+            I build clean, responsive and user-friendly websites
+            using modern web technologies and React.
           </p>
-          <button style={btnStyle} onClick={() => setLikes(likes + 1)}>
-            ✨ Support My Journey ({likes})
-          </button>
-        </section>
 
-        <section style={{ marginTop: '2rem' }}>
-          <h2 style={sectionTitleStyle}>Featured Projects</h2>
-          <div style={gridStyle}>
-            {myProjects.map((project) => (
-              <div key={project.id} style={cardStyle}>
-                <h3 style={cardTitleStyle}>{project.title}</h3>
-                <p style={cardDescStyle}>{project.desc}</p>
-              </div>
-            ))}
+          <div className="buttons">
+            <a href="#projects" className="btn">
+              View Projects
+            </a>
+
+            <a href="#contact" className="btn secondary">
+              Contact Me
+            </a>
           </div>
-        </section>
-      </main>
+        </div>
+
+        <div className="profile">
+          <span>👨‍💻</span>
+        </div>
+
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="section">
+
+        <p className="section-tag">ABOUT ME</p>
+
+        <h2>Who I Am</h2>
+
+        <p className="section-text">
+          I'm Yogesh Verma, a beginner frontend developer
+          passionate about creating websites and learning
+          new technologies. I enjoy turning ideas into
+          simple and attractive web experiences.
+        </p>
+
+      </section>
+
+      {/* SKILLS */}
+      <section id="skills" className="section">
+
+        <p className="section-tag">MY SKILLS</p>
+
+        <h2>Technologies I Use</h2>
+
+        <div className="skills">
+
+          {skills.map((skill) => (
+            <div className="skill-card" key={skill}>
+              {skill}
+            </div>
+          ))}
+
+        </div>
+
+      </section>
+
+      {/* PROJECTS */}
+      <section id="projects" className="section">
+
+        <p className="section-tag">MY WORK</p>
+
+        <h2>Featured Projects</h2>
+
+        <p className="section-text">
+          Some of the projects I have created while learning
+          frontend development and React.
+        </p>
+
+        <div className="projects">
+
+          {projects.map((project) => (
+            <div className="project-card" key={project.title}>
+
+              <div className="project-icon">
+                💻
+              </div>
+
+              <h3>{project.title}</h3>
+
+              <p>{project.description}</p>
+
+              <span className="tech">
+                {project.tech}
+              </span>
+
+              <br />
+
+              <a
+                href={project.link}
+                className="project-link"
+              >
+                View Project →
+              </a>
+
+            </div>
+          ))}
+
+        </div>
+
+      </section>
+
+      {/* CERTIFICATES */}
+      <section id="certificates" className="section">
+
+        <p className="section-tag">ACHIEVEMENTS</p>
+
+        <h2>Certificates</h2>
+
+        <div className="certificates">
+
+          <div className="certificate-card">
+
+            <div className="certificate-placeholder">
+              📜
+            </div>
+
+            <h3>React Development</h3>
+
+            <p>
+              React and frontend development certificate.
+            </p>
+
+            <button>
+              View Certificate
+            </button>
+
+          </div>
+
+          <div className="certificate-card">
+
+            <div className="certificate-placeholder">
+              🏆
+            </div>
+
+            <h3>JavaScript</h3>
+
+            <p>
+              JavaScript fundamentals certificate.
+            </p>
+
+            <button>
+              View Certificate
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* EDUCATION */}
+      <section id="education" className="section">
+
+        <p className="section-tag">EDUCATION</p>
+
+        <h2>My Education</h2>
+
+        <div className="education-card">
+
+          <div className="education-icon">
+            🎓
+          </div>
+
+          <div>
+            <h3>Computer Science / IT</h3>
+
+            <p>
+              Currently pursuing my degree and building
+              practical skills in web development.
+            </p>
+
+            <span>2023 - Present</span>
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="contact">
+
+        <p className="section-tag">GET IN TOUCH</p>
+
+        <h2>Let's Work Together</h2>
+
+        <p>
+          Have a project or opportunity? I'd love to hear
+          from you.
+        </p>
+
+        <a
+          href="mailto:your-email@gmail.com"
+          className="btn"
+        >
+          Email Me
+        </a>
+
+      </section>
+
+      {/* FOOTER */}
+      <footer>
+        <p>
+            2026 Yogesh Verma. Built with React.
+        </p>
+      </footer>
+
     </div>
   );
 }
