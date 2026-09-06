@@ -1,36 +1,47 @@
 import React, { useState } from 'react';
+import './App.css'; // <-- CSS files yahan link ho gayi
 
 function App() {
-  const [projectCount, setProjectCount] = useState(2);
+  const [likes, setLikes] = useState(0);
+
+  const myProjects = [
+    { id: 1, title: "Mobile E-Commerce App", desc: "A sleek shopping platform coded completely on a mobile layout using pure React state." },
+    { id: 2, title: "Crypto Live Tracker", desc: "Real-time cryptocurrency visualization UI leveraging React Hooks and modern flexbox grids." }
+  ];
 
   return (
-    <div style={{ fontFamily: 'sans-serif', padding: '20px', backgroundColor: '#121212', color: '#fff', minHeight: '100vh' }}>
-      <header style={{ borderBottom: '1px solid #333', paddingBottom: '10px' }}>
-        <h1>My Pure React Portfolio</h1>
-        <p>Built entirely from my Phone without VS Code!</p>
+    <div className="portfolio-container">
+      {/* Navbar */}
+      <header className="navbar">
+        <div className="logo">Dev.Phone</div>
       </header>
 
-      <main style={{ marginTop: '30px' }}>
-        <h2>About Me</h2>
-        <p>Hi, I am a passionate React developer managing code repositories straight from a mobile browser.</p>
+      {/* Hero Section */}
+      <main>
+        <section className="hero-section">
+          <h1 className="hero-title">
+            Hi, I'm a <span className="hero-highlight">React Developer</span>
+          </h1>
+          <p className="hero-subtitle">
+            I craft clean, fast, and modern web applications directly from my smartphone browser. No VS Code required.
+          </p>
+          <button className="cta-btn" onClick={() => setLikes(likes + 1)}>
+            ✨ Support My Coding Journey ({likes})
+          </button>
+        </section>
 
-        <h2 style={{ marginTop: '40px' }}>My Projects ({projectCount})</h2>
-        <div style={{ display: 'grid', gap: '15px', marginTop: '10px' }}>
-          <div style={{ background: '#222', padding: '15px', borderRadius: '8px' }}>
-            <h3>Project 1: Mobile E-Commerce</h3>
-            <p>A functional shopping cart app built purely in React.</p>
+        {/* Projects Section */}
+        <section style={{ marginTop: '2rem' }}>
+          <h2 className="section-title">Featured Projects</h2>
+          <div className="projects-grid">
+            {myProjects.map((project) => (
+              <div key={project.id} className="project-card">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-desc">{project.desc}</p>
+              </div>
+            ))}
           </div>
-          <div style={{ background: '#222', padding: '15px', borderRadius: '8px' }}>
-            <h3>Project 2: Crypto Tracker</h3>
-            <p>Real-time data visualization layout using React state.</p>
-          </div>
-        </div>
-
-        <button 
-          onClick={() => setProjectCount(projectCount + 1)}
-          style={{ marginTop: '20px', padding: '10px 20px', background: '#00adb5', border: 'none', borderRadius: '5px', color: '#fff', cursor: 'pointer', fontWeight: 'bold' }}>
-          ➕ Add Simulated Project
-        </button>
+        </section>
       </main>
     </div>
   );
