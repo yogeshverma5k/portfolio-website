@@ -62,15 +62,24 @@ export default function App() {
             technologies.
           </p>
 
-          <div className="buttons">
-            <a href="#projects" className="btn">
-              View Projects
-            </a>
+        <div className="buttons">
+  <a href="#projects" className="btn">
+    View Projects
+  </a>
 
-            <a href="#contact" className="btn secondary">
-              Contact Me
-            </a>
-          </div>
+  <a
+    href="/resume.pdf"
+    className="btn secondary"
+    target="_blank"
+    rel="noreferrer"
+  >
+    📄 View Resume
+  </a>
+
+  <a href="#contact" className="btn secondary">
+    Contact Me
+  </a>
+    </div>
         </div>
 
         <div className="profile">
