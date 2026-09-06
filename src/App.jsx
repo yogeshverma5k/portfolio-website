@@ -2,39 +2,35 @@ import React from "react";
 
 export default function App() {
   const projects = [
-    {
-      title: "Todo App",
-      icon: "✅",
-      description:
-        "A simple and clean Todo application to add, manage and complete daily tasks.",
-      tech: "React",
-      link: "#",
-    },
-    {
-      title: "Weather App",
-      icon: "🌤️",
-      description:
-        "A responsive weather application that displays weather information in a simple interface.",
-      tech: "React",
-      link: "#",
-    },
-    {
-      title: "Login & Signup",
-      icon: "🔐",
-      description:
-        "A modern login and registration interface with a clean and user-friendly design.",
-      tech: "React",
-      link: "#",
-    },
-    {
-      title: "Profile Section",
-      icon: "👤",
-      description:
-        "A responsive profile section created with React and modern UI styling.",
-      tech: "React",
-      link: "#",
-    },
-  ];
+  {
+    title: "Todo App",
+    description: "A simple React Todo Application to add and manage daily tasks.",
+    tech: "React",
+    link: "https://github.com/yogeshverma5k/todo-app",
+    icon: "📝"
+  },
+  {
+    title: "Weather App",
+    description: "Weather application that displays weather information using an API.",
+    tech: "JavaScript",
+    link: "https://github.com/yogeshverma5k/weather-app",
+    icon: "🌤️"
+  },
+  {
+    title: "Login & Signup",
+    description: "Login and Signup page with user registration using Local Storage.",
+    tech: "JavaScript",
+    link: "https://github.com/yogeshverma5k/login-signup-",
+    icon: "🔐"
+  },
+  {
+    title: "Profile Section",
+    description: "Responsive profile section created using HTML, CSS and JavaScript.",
+    tech: "HTML / CSS / JS",
+    link: "https://github.com/yogeshverma5k/profile-section",
+    icon: "👤"
+  }
+];
 
   return (
     <>
@@ -261,14 +257,14 @@ export default function App() {
 
         <div className="buttons">
           <a
-            href="mailto:your-email@gmail.com"
+            href="mailto:avvermabgmi2021@gmail.com"
             className="btn"
           >
             Email Me
           </a>
 
           <a
-            href="https://github.com/"
+            href="https://github.com/yogeshverma5k"
             target="_blank"
             rel="noreferrer"
             className="btn secondary"
